@@ -1,5 +1,31 @@
 #include "libtdd.h"
 
+/*	_split - splits a string into an array, based on delimeter
+ *
+ *	Signature:
+ *		char	**_split(char *s, char delim);
+ *
+ *	Description:
+ *		_split creates a 2D array of string based on the string 's',
+ *		separated by each occurance of character 'delim'.
+ *		Final output is NULL-terminated.
+ *
+ *	Return:
+ *		On success: a 2D array of strings
+ *		On fail: NULL
+ *
+ *	Examples:
+ *		s =		"Lorem ipsum dolor sit amet"
+ *		delim =	' '
+ *		output:
+ *		[0] = "Lorem"
+ *		[1] = "ipsum"
+ *		[2] = "dolor"
+ *		[3] = "sit"
+ *		[4] = "amet"
+ *		[5] = NULL
+ * */
+
 static size_t	__word_count(char *s, char delim);
 
 char	**_split(char *s, char delim) {
