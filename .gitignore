@@ -1,0 +1,13 @@
+# binary
+bin/
+build/
+*.a
+*.so
+*.out
+*.exe
+*.lib
+*.dll
+
+# vim files
+*.swp
+*.swo

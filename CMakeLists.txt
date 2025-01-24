@@ -1,22 +1,9 @@
 # SECTION:
 #	General Setup
 
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.11)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-# SECTION:
-#	FetchContent
-
-include(FetchContent)
-
-FetchContent_Declare(
-	gtest
-	GIT_REPOSITORY https://github.com/google/googletest.git
-	GIT_TAG v1.15.2
-)
-
-FetchContent_MakeAvailable(gtest)
 
 # SECTION:
 #	Project Setup
@@ -30,7 +17,5 @@ set(SOURCES
 	${CMAKE_SOURCE_DIR}/strjoin.c
 )
 
-add_library(tdd ${SOURCES})
-
-add_executable(test.out ${CMAKE_SOURCE_DIR}/test/libtdd_test.cpp)
-target_link_libraries(test.out PRIVATE gtest gtest_main tdd)
+add_library(${PROJECT_NAME} ${SOURCES})
+add_subdirectory(${CMAKE_SOURCE_DIR}/test)
